@@ -2,16 +2,9 @@
 
 ## How do I install these formulae?
 
-`brew install resend/cli/<formula>`
+`brew install resend/cli/resend`
 
-Or `brew tap resend/cli` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "resend/cli"
-brew "<formula>"
-```
+Or `brew tap resend/cli` and then `brew install resend`.
 
 ## Documentation
 
