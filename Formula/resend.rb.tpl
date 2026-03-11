@@ -5,20 +5,20 @@ class Resend < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/resend/homebrew-cli/releases/download/v{{VER}}/resend-darwin-arm64.tar.gz"
+      url "https://github.com/resend/resend-cli/releases/download/v{{VER}}/resend-darwin-arm64.tar.gz"
       sha256 "{{SHA_DARWIN_ARM64}}"
     else
-      url "https://github.com/resend/homebrew-cli/releases/download/v{{VER}}/resend-darwin-x64.tar.gz"
+      url "https://github.com/resend/resend-cli/releases/download/v{{VER}}/resend-darwin-x64.tar.gz"
       sha256 "{{SHA_DARWIN_X64}}"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/resend/homebrew-cli/releases/download/v{{VER}}/resend-linux-arm64.tar.gz"
+      url "https://github.com/resend/resend-cli/releases/download/v{{VER}}/resend-linux-arm64.tar.gz"
       sha256 "{{SHA_LINUX_ARM64}}"
     else
-      url "https://github.com/resend/homebrew-cli/releases/download/v{{VER}}/resend-linux-x64.tar.gz"
+      url "https://github.com/resend/resend-cli/releases/download/v{{VER}}/resend-linux-x64.tar.gz"
       sha256 "{{SHA_LINUX_X64}}"
     end
   end

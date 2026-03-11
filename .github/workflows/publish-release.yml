@@ -12,13 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Download binaries from resend-cli
         env:
-          GH_TOKEN: ${{ secrets.RESEND_CLI_READONLY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ inputs.version }}
         run: |
           gh release download "${VERSION}" \
@@ -28,16 +29,6 @@ jobs:
             --pattern "resend-linux-arm64.tar.gz" \
             --pattern "resend-linux-x64.tar.gz" \
             --dir ./artifacts
-
-      - name: Create public release on tap repo
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ inputs.version }}
-        run: |
-          gh release create "${VERSION}" artifacts/*.tar.gz \
-            --repo resend/homebrew-cli \
-            --title "resend ${VERSION}" \
-            --notes "Resend CLI ${VERSION}"
 
       - name: Compute SHA256 and update formula
         env:
@@ -57,7 +48,9 @@ jobs:
             -e "s/{{SHA_LINUX_X64}}/${SHA_LINUX_X64}/" \
             Formula/resend.rb.tpl > Formula/resend.rb
 
-      - name: Commit and push updated formula
+          rm -rf ./artifacts
+
+      - name: Create PR with updated formula
         env:
           VERSION: ${{ inputs.version }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -77,5 +70,3 @@ jobs:
             --body "Update Homebrew formula for resend ${VERSION}" \
             --base main \
             --head "$BRANCH"
-
-          gh pr merge "$BRANCH" --merge --auto
