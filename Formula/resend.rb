@@ -25,6 +25,8 @@ class Resend < Formula
 
   def install
     bin.install "resend"
+
+    generate_completions_from_executable(bin/"resend", "completion")
   end
 
   test do
