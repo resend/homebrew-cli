@@ -6,6 +6,9 @@ on:
       version:
         description: "Version tag (e.g. v0.8.0)"
         required: true
+      reviewer:
+        description: "GitHub username to request review from"
+        required: false
 
 jobs:
   publish:
@@ -65,8 +68,10 @@ jobs:
           git commit -m "resend ${VERSION}"
           git push origin "$BRANCH"
 
+          REVIEWER="${{ inputs.reviewer }}"
           gh pr create \
             --title "resend ${VERSION}" \
             --body "Update Homebrew formula for resend ${VERSION}" \
             --base main \
-            --head "$BRANCH"
+            --head "$BRANCH" \
+            ${REVIEWER:+--reviewer "$REVIEWER"}
