@@ -6,14 +6,17 @@ on:
       - main
   pull_request:
 
+permissions: {}
+
 jobs:
   test-bot:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: read
     steps:
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@main
+        uses: Homebrew/actions/setup-homebrew@56e6e1830b3c103b917ea1a7d175dcf99b62e6fc # main as of 2026-05-12
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
