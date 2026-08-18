@@ -1,7 +1,6 @@
 class Resend < Formula
   desc "Command-line interface for Resend"
   homepage "https://resend.com/cli"
-  version "{{VER}}"
 
   on_macos do
     if Hardware::CPU.arm?
