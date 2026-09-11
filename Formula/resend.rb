@@ -4,8 +4,8 @@ class Resend < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/resend/resend-cli/releases/download/v2.20.0/resend-darwin-arm64.tar.gz"
-      sha256 "a242b57563f8bc21253db011a3e2843f82456ab89e1089f21a9e1373cbd67e5c"
+      url "https://github.com/resend/resend-cli/archive/refs/tags/v2.20.1.tar.gz"
+      sha256 "b6bc5852db0f5a87a80b67e9c5a884375cc50aeef703a3fe61fc5f0b6cd6f0d8"
     else
       url "https://github.com/resend/resend-cli/releases/download/v2.20.0/resend-darwin-x64.tar.gz"
       sha256 "245b066d2dc3da3a555f336a7652c8056d9cd7b371b0562a1c337ab691ff6de5"
