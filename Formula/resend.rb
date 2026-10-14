@@ -4,21 +4,21 @@ class Resend < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/resend/resend-cli/releases/download/v2.24.0/resend-darwin-arm64.tar.gz"
-      sha256 "0870c46c09d73e94f8454ba4d4ca0e2333b85e53ed9781406315c85f82c3b07e"
+      url "https://github.com/resend/resend-cli/releases/download/v2.25.0/resend-darwin-arm64.tar.gz"
+      sha256 "8baebeea89074092b5b1af103b56afb37b9251daf85473053a078cabadb4a8ff"
     else
-      url "https://github.com/resend/resend-cli/releases/download/v2.24.0/resend-darwin-x64.tar.gz"
-      sha256 "e262233918cebd2ac3579f414981f2efa53b9d8884e1740c0f67a282bbf008a8"
+      url "https://github.com/resend/resend-cli/releases/download/v2.25.0/resend-darwin-x64.tar.gz"
+      sha256 "343c28465b9aded081f96c52a52e52501e33205fe3852f62ec7de0d7a19d8ac6"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/resend/resend-cli/releases/download/v2.24.0/resend-linux-arm64.tar.gz"
-      sha256 "8b842045fa1193c30968e95f2cbdd1db9e9b70627f1b17a25b7d5ccf1f6e319e"
+      url "https://github.com/resend/resend-cli/releases/download/v2.25.0/resend-linux-arm64.tar.gz"
+      sha256 "a2aa528cb05232f3d281ff5a39486068f313f80de5ded875cca29d5a143b3c91"
     else
-      url "https://github.com/resend/resend-cli/releases/download/v2.24.0/resend-linux-x64.tar.gz"
-      sha256 "fe292d21e84884ae9873ee08a021a485750c7004d732f88fd8cb41da6e1c8ffb"
+      url "https://github.com/resend/resend-cli/releases/download/v2.25.0/resend-linux-x64.tar.gz"
+      sha256 "e71063b0a836b0a18fc0c68aca6491f3131a639c3fc7820a03bae222d7d62780"
     end
   end
 
