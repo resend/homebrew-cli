@@ -20,4 +20,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - run: brew trust resend/cli
+
       - run: brew test-bot --only-tap-syntax
